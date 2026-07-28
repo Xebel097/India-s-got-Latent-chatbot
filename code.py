@@ -5,6 +5,9 @@ from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain_core.chat_history import InMemoryChatMessageHistory
 from langchain_core.runnables.history import RunnableWithMessageHistory
 
+# Set the API key directly in the environment
+os.environ["GROQ_API_KEY"] = "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"
+
 # 1. Page Configuration
 st.set_page_config(
     page_title="India's Got Latent — Contestant AI",
@@ -24,10 +27,9 @@ st.markdown("""
 st.title("🎙️ India's Got Latent — AI Stage")
 st.caption("The judges are watching. Select your act persona and start the banter.")
 
-# 2. Sidebar API & Persona Setup
+# 2. Sidebar Persona Setup
 with st.sidebar:
     st.header("⚙️ Backstage Setup")
-    api_key = st.text_input("Enter Groq API Key", type="password")
     
     PERSONAS = {
         "Default (No Persona)": "You are a helpful, direct conversational AI assistant.",
@@ -58,11 +60,6 @@ with st.sidebar:
         st.session_state.messages = []
         st.rerun()
 
-# Check for API Key
-if not api_key:
-    st.info("👈 Please enter your Groq API key in the sidebar to boot up the bot!")
-    st.stop()
-
 # 3. Memory & Session Initialization
 if "chat_history" not in st.session_state:
     st.session_state.chat_history = InMemoryChatMessageHistory()
@@ -80,7 +77,6 @@ prompt = ChatPromptTemplate.from_messages([
 ])
 
 llm = ChatGroq(
-    groq_api_key=api_key,
     model_name="llama-3.3-70b-versatile",
     temperature=0.7
 )
