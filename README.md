@@ -51,7 +51,7 @@ Install the necessary Python packages using pip:
 pip install streamlit langchain-groq langchain-core
 ```
 ## 🔑 API Key Configuration
-The API key to run this chatbot is pre-defined in the .gitignore file. the user is advised to utise their personal key for the project but in absolute necessetiy, one could utilise the pre-defined Groq API key.
+The API key to run this chatbot is pre-defined in the .gitignore file. The user is advised to utise their personal key for the project but in absolute necessetiy, one could utilise the pre-defined Groq API key.
 
 ## 🏃 Running the App
 Run the application using Streamlit:
