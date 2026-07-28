@@ -6,7 +6,11 @@ from langchain_core.chat_history import InMemoryChatMessageHistory
 from langchain_core.runnables.history import RunnableWithMessageHistory
 
 # Set the API key directly in the environment
-os.environ["GROQ_API_KEY"] = "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"
+if "GROQ_API_KEY" in st.secrets:
+    os.environ["GROQ_API_KEY"] = st.secrets["GROQ_API_KEY"]
+else:
+    st.error("GROQ_API_KEY is missing. Please add it to .streamlit/secrets.toml")
+    st.stop()
 
 # 1. Page Configuration
 st.set_page_config(
