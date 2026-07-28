@@ -65,7 +65,7 @@ streamlit run app.py
 Streamlit will automatically open the app in your default browser at http://localhost:8501.
 
 ## 📁 Project Structure
-Plaintext
+
 ├── app.py          # Main Streamlit application
 
 └── README.md       # Project setup and documentation
