@@ -1,10 +1,1 @@
-# Streamlit secrets (contains API keys)
-.streamlit/secrets.toml
-
-# Virtual environment
-venv/
-.venv/
-
-# Python cache files
-__pycache__/
-*.pyc
+groq_api_key= "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"
