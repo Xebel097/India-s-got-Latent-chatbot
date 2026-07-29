@@ -48,10 +48,10 @@ venv\Scripts\activate
 ### 3. Install Required Dependencies
 Install the necessary Python packages using pip:
 ```bash
-pip install streamlit langchain-groq langchain-core
+pip install streamlit langchain-groq langchain-core python-dotenv
 ```
 ## 🔑 API Key Configuration
-The API key to run this chatbot is pre-defined in the .gitignore file. The user is advised to utise their personal key for the project but in absolute necessetiy, one could utilise the pre-defined Groq API key.
+The API key to run this chatbot is pre-defined in the .env.example file. The user is advised to utilise their personal key (generate one from https://console.groq.com/keys) for the project but in absolute necessetiy, one could utilise the pre-defined Groq API key.
 
 ## 🏃 Running the App
 Run the application using Streamlit:
@@ -64,5 +64,5 @@ Streamlit will automatically open the app in your default browser at http://loca
 ## 📁 Project Structure
 
 ├── app.py          # Main Streamlit application
-
+|
 └── README.md       # Project setup and documentation
